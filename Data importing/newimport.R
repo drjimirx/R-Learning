@@ -37,6 +37,18 @@ patients <- readr::read_csv(
   na = c("", "NA", "999")
 )
 
+library(readxl)
+patients3 <- readxl::read_excel("Data importing/pt_data.xlsx")
 
-jimi <- "flower is beautifull"
-print(jimi)
+#excel with multiple sheet
+patients <- readxl::read_excel(
+  "patients.xlsx",
+  sheet = "Demographics"
+)
+
+patients <- readxl::read_excel(
+  "patients.xlsx",
+  sheet = 1
+)
+
+
