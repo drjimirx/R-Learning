@@ -19,3 +19,45 @@ patients <- data.frame(
 )
 
 
+
+# donot share patient_id
+# name
+# phone
+# address
+# date_of_birth
+# age
+# diagnosis
+# laboratory_values
+
+# 
+# You should not automatically export or share all columns.
+# For example, you might create a de-identified dataset:
+#   
+# 
+
+
+analysis_data <- patients[
+  ,
+  c(
+    "patient_id",
+    "age",
+    "sex",
+    "diagnosis",
+    "outcome"
+  )
+]
+ #then export
+
+
+# Exporting Derived Variables
+# Suppose you calculated BMI:
+  patients$bmi <- patients$weight /
+  patients$height^2
+#Now export:
+  write.csv(
+    patients,
+    "patients_with_bmi.csv",
+    row.names = FALSE
+  )
+
+
