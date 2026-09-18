@@ -7,7 +7,6 @@ patients <- data.frame(
 )
 
 
-
 writexl::write_xlsx(
   patients,
   "patient_data_excel.xlsx"
